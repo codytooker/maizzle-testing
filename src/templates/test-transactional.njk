@@ -1,0 +1,23 @@
+---
+title: Reset your account password
+bodyClass: bg-gray-200 h-full
+htmlClass: bg-gray-200 h-full
+---
+
+{% block template %}
+
+  {% component 'src/components/transactional/container.njk' %}
+    {% component 'src/components/transactional/title.njk' %}{{page.tenant.name}}{% endcomponent %}
+    {% component 'src/components/transactional/card.njk' %}
+      <p>Hi John Doe</p>
+      <p>We've received a requeest to reset your account password. Click below to get started:</p>
+      {% include "src/partials/spacer.njk" %}
+      {% component 'src/components/transactional/button.njk', { link: "https://example.com" } %}Reset Password{% endcomponent %}
+      {% include "src/partials/spacer.njk" %}
+      <p>Your registered email address johndoe@email.com</p>
+      <p>Questions? Log in and read our FAQ</p>
+    {% endcomponent %}
+    {% include "src/partials/footer-by-line.njk" %}
+  {% endcomponent %}
+
+{% endblock %}
